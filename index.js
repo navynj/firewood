@@ -1,5 +1,5 @@
-const clues = require('./clues.json');
-const trees = require('./trees.json');
+const clues = require('./data/clues.json');
+const trees = require('./data/trees.json');
 
 const express = require('express');
 const app = express();
