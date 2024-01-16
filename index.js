@@ -15,8 +15,9 @@ app.get('/', (req, res) => {
     });
 });
 
-apiRouter.get('/clue1', (req, res) => {
-    const name = req.query.name;
+apiRouter.post('/clue1', (req, res) => {
+    const { action } = req.body;
+    const name = action.detailParams.name.value;
     const responseBody = {
         version: '2.0',
         template: {
