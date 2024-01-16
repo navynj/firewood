@@ -36,6 +36,6 @@ apiRouter.get('/clue1', (req, res) => {
     res.status(200).send(responseBody);
 });
 
-app.listen(5000, () => {
+app.listen(8000, () => {
     console.log('Server is running 🚀');
 });
