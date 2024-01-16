@@ -47,21 +47,21 @@ apiRouter.post('/tree', (req, res) => {
 
   if (tree && target && tree === target) {
     var outputs = [
-      {
-        simpleText: {
-          text: '나무를 다시 찾아보세요.',
+        {
+          simpleImage: {
+            imageUrl: trees[name],
+            altText: '팀원을 찾을 수 있는 나무조각',
+          },
         },
-      },
-    ];
+      ];
   } else {
     var outputs = [
-      {
-        simpleImage: {
-          imageUrl: trees[name],
-          altText: '팀원을 찾을 수 있는 나무조각',
+        {
+          simpleText: {
+            text: '나무를 다시 찾아보세요.',
+          },
         },
-      },
-    ];
+      ];
   }
 
   const responseBody = {
