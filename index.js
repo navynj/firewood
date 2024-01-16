@@ -45,7 +45,7 @@ apiRouter.post('/tree', (req, res) => {
   const { name, tree } = action.params;
   const { tree: target } = trees[name];
 
-  if (tree === target) {
+  if (tree && target && tree === target) {
     var outputs = [
       {
         simpleText: {
