@@ -23,7 +23,7 @@ apiRouter.post('/clue1', (req, res) => {
   const name = action.params.name;
   const responseBody = {
     version: '2.0',
-    templates: {
+    template: {
       outputs: [
         {
           simpleText: {
@@ -66,7 +66,7 @@ apiRouter.post('/tree', (req, res) => {
 
   const responseBody = {
     version: '2.0',
-    templates: { outputs },
+    template: { outputs },
   };
 
   res.status(200).send(responseBody);
