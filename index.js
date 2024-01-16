@@ -1,4 +1,5 @@
 const clues = require('./clues.json');
+const trees = require('./trees.json');
 
 const express = require('express');
 const app = express();
@@ -48,8 +49,7 @@ apiRouter.post('/tree', (req, res) => {
       outputs: [
         {
           simpleImage: {
-            imageUrl:
-              'https://github.com/navynj/earlyblue/blob/main/asset/2024_%EA%B2%A8%EC%9A%B8%EC%BA%A0%ED%94%84%ED%8F%AC%EC%8A%A4%ED%84%B0_%EB%AA%A8%EB%8B%A5%EB%B6%88.png?raw=true',
+            imageUrl: trees[name],
             altText: '팀원을 찾을 수 있는 나무조각',
           },
         },
