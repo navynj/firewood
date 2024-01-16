@@ -9,6 +9,12 @@ app.use(logger('dev', {}));
 app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+    });
+});
+
 apiRouter.get('/clue1', (req, res) => {
     const name = req.query.name;
     const responseBody = {
@@ -20,7 +26,10 @@ apiRouter.get('/clue1', (req, res) => {
                         text: name + ': 이 사람은 특징 1을 가지고 있다.'
                     }
                 }
-            ]
+            ],
+            data: {
+
+            }
         }
     };
 
@@ -28,5 +37,5 @@ apiRouter.get('/clue1', (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log('listion on port 5000');
+    console.log('Server is running 🚀');
 });
