@@ -20,17 +20,8 @@ apiRouter.post('/clue1', (req, res) => {
     const name = action.detailParams.name.value;
     const responseBody = {
         version: '2.0',
-        template: {
-            outputs: [
-                {
-                    simpleText: {
-                        text: name + ': 이 사람은 특징 1을 가지고 있다.'
-                    }
-                }
-            ],
-            data: {
-
-            }
+        data: {
+            clue: name + ': 이 사람은 특징 1을 가지고 있다.'
         }
     };
 
