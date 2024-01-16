@@ -42,22 +42,31 @@ apiRouter.post('/clue1', (req, res) => {
 
 apiRouter.post('/tree', (req, res) => {
   const { action } = req.body;
-  const name = action.params.name;
+  const { name, tree } = action.params;
+  const { tree: target } = trees[name];
+
+  if (tree === target) {
+    var outputs = [
+      {
+        simpleText: {
+          text: '나무를 다시 찾아보세요.',
+        },
+      },
+    ];
+  } else {
+    var outputs = [
+      {
+        simpleImage: {
+          imageUrl: trees[name],
+          altText: '팀원을 찾을 수 있는 나무조각',
+        },
+      },
+    ];
+  }
+
   const responseBody = {
     version: '2.0',
-    templates: {
-      outputs: [
-        {
-          simpleImage: {
-            imageUrl: trees[name],
-            altText: '팀원을 찾을 수 있는 나무조각',
-          },
-        },
-      ],
-    },
-    data: {
-      clue: `${clues[name]} : 테스트`,
-    },
+    templates: { outputs },
   };
 
   res.status(200).send(responseBody);
