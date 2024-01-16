@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
-    res.json({
+    res.status(200).send({
         success: true,
     });
 });
