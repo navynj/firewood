@@ -22,6 +22,15 @@ apiRouter.post('/clue1', (req, res) => {
   const name = action.params.name;
   const responseBody = {
     version: '2.0',
+    templates: {
+      outputs: [
+        {
+          simpleText: {
+            text: clues[name],
+          },
+        },
+      ],
+    },
     data: {
       clue: clues[name],
     },
