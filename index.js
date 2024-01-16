@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 apiRouter.post('/clue1', (req, res) => {
     const { action } = req.body;
-    const name = action.detailParams.name.value;
+    const name = action.params.name;
     const responseBody = {
         version: '2.0',
         data: {
