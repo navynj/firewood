@@ -26,13 +26,13 @@ apiRouter.post('/clue1', (req, res) => {
       outputs: [
         {
           simpleText: {
-            text: clues[name] + ': 테스트',
+            text: `${clues[name]} : 테스트`,
           },
         },
       ],
     },
     data: {
-      clue: clues[name] + ': 테스트',
+      clue: `${clues[name]} : 테스트`,
     },
   };
 
