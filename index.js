@@ -28,7 +28,7 @@ apiRouter.post('/clue1', (req, res) => {
         {
           basicCard: {
             title: '첫번째 단서',
-            description: `${clues[name]} : 테스트`,
+            description: `${clues[name]} : 테스트!`,
             thumbnail: {
               imageUrl:
                 'https://k.kakaocdn.net/dn/dADEfH/btsDuUoyg0e/9BAxrFxS9y55zcJGJsVKcK/800x800.jpg',
