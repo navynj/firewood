@@ -26,6 +26,23 @@ apiRouter.post('/clue1', (req, res) => {
     template: {
       outputs: [
         {
+          basicCard: {
+            title: '첫번째 단서',
+            description: `${clues[name]} : 테스트`,
+            thumbnail: {
+              imageUrl:
+                'https://k.kakaocdn.net/dn/dADEfH/btsDuUoyg0e/9BAxrFxS9y55zcJGJsVKcK/800x800.jpg',
+            },
+            buttons: [
+              {
+                action: 'message',
+                label: '다음 단서로',
+                messageText: '다음 단서로',
+              },
+            ],
+          },
+        },
+        {
           simpleText: {
             text: `${clues[name]} : 테스트`,
           },
@@ -47,21 +64,21 @@ apiRouter.post('/tree', (req, res) => {
 
   if (tree && target && tree === target) {
     var outputs = [
-        {
-          simpleImage: {
-            imageUrl: trees[name],
-            altText: '팀원을 찾을 수 있는 나무조각',
-          },
+      {
+        simpleImage: {
+          imageUrl: trees[name],
+          altText: '팀원을 찾을 수 있는 나무조각',
         },
-      ];
+      },
+    ];
   } else {
     var outputs = [
-        {
-          simpleText: {
-            text: '나무를 다시 찾아보세요.',
-          },
+      {
+        simpleText: {
+          text: '나무를 다시 찾아보세요.',
         },
-      ];
+      },
+    ];
   }
 
   const responseBody = {
