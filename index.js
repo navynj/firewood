@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 apiRouter.post('/clue1', (req, res) => {
   const { action } = req.body;
   const name = action.params.name;
+  console.log(action);
   const responseBody = {
     version: '2.0',
     data: {
