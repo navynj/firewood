@@ -33,24 +33,24 @@ apiRouter.post('/clue1', (req, res) => {
 
 apiRouter.post('/tree', (req, res) => {
   console.log(req.body);
-  const { action } = req.body;
-  const { name: nameObj, tree: treeObj } = action.detailParams;
+  // const { action } = req.body;
+  // const { name: nameObj, tree: treeObj } = action.detailParams;
 
-  const name = nameObj.origin;
-  const tree = treeObj.origin;
+  // const name = nameObj.origin;
+  // const tree = treeObj.origin;
 
-  const { tree: target, image: imageUrl } = trees[name];
+  // const { tree: target, image: imageUrl } = trees[name];
 
-  if (tree && target && tree === target && trees[name]) {
-    var outputs = [
-      {
-        simpleImage: {
-          imageUrl,
-          altText: '팀원을 찾을 수 있는 나무조각',
-        },
-      },
-    ];
-  } else {
+  // if (tree && target && tree === target && trees[name]) {
+  //   var outputs = [
+  //     {
+  //       simpleImage: {
+  //         imageUrl,
+  //         altText: '팀원을 찾을 수 있는 나무조각',
+  //       },
+  //     },
+  //   ];
+  // } else {
     var outputs = [
       {
         simpleText: {
@@ -58,7 +58,7 @@ apiRouter.post('/tree', (req, res) => {
         },
       },
     ];
-  }
+  // }
 
   const responseBody = {
     version: '2.0',
