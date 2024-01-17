@@ -23,27 +23,6 @@ apiRouter.post('/clue1', (req, res) => {
   const name = action.params.name;
   const responseBody = {
     version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '첫번째 단서',
-            description: `${clues[name]} : 스킬 응답 테스트`,
-            thumbnail: {
-              imageUrl:
-                'https://k.kakaocdn.net/dn/dADEfH/btsDuUoyg0e/9BAxrFxS9y55zcJGJsVKcK/800x800.jpg',
-            },
-            buttons: [
-              {
-                action: 'message',
-                label: '다음 단서로',
-                messageText: '다음 단서로',
-              },
-            ],
-          },
-        },
-      ],
-    },
     data: {
       clue: `${clues[name]} : 테스트`,
     },
