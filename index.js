@@ -61,7 +61,16 @@ apiRouter.post('/tree', (req, res) => {
 
   const responseBody = {
     version: '2.0',
-    template: { outputs },
+    template: {
+      outputs: [
+        {
+          simpleImage: {
+            imageUrl: trees[name],
+            altText: '팀원을 찾을 수 있는 나무조각',
+          },
+        },
+      ],
+    },
   };
 
   res.status(200).send(responseBody);
