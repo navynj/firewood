@@ -35,8 +35,8 @@ apiRouter.post('/tree', (req, res) => {
   //   const { action } = req.body;
   //   const { name: nameObj, tree: treeObj } = action.detailParams;
 
-  //   const name = nameObj.origin;
-  //   const tree = treeObj.origin;
+  //   const name = action.detailParams.name.origin;
+  //   const tree = action.detailParams.tree.origin;
 
   //   const { tree: target } = trees[name];
 
@@ -77,10 +77,15 @@ apiRouter.post('/tree', (req, res) => {
 
   const { action } = req.body;
   const name = action.detailParams.name.origin;
+  const tree = action.detailParams.tree.origin;
   const responseBody = {
     version: '2.0',
-    data: {
-      clue: clues[name],
+    template: {
+      outputs: [
+        {
+          simpleText: { text: trees[name] },
+        },
+      ],
     },
   };
 
