@@ -33,6 +33,11 @@ apiRouter.post('/clue1', (req, res) => {
 
 apiRouter.post('/tree', (req, res) => {
   console.log(req.body);
+
+  const name = req.body.action.detailParams.name;
+  console.log(name);
+  console.log(typeof(name));
+
   // const { action } = req.body;
   // const { name: nameObj, tree: treeObj } = action.detailParams;
 
