@@ -24,7 +24,7 @@ apiRouter.post('/clue1', (req, res) => {
   const responseBody = {
     version: '2.0',
     data: {
-      clue: `${clues[name]} : 테스트`,
+      clue: clues[name],
     },
   };
 
@@ -33,7 +33,11 @@ apiRouter.post('/clue1', (req, res) => {
 
 apiRouter.post('/tree', (req, res) => {
   const { action } = req.body;
-  const { name, tree } = action.params;
+  const { name: nameObj, tree: treeObj } = action.detailParams;
+
+  const name = nameObj.origin;
+  const tree = treeObj.origin;
+
   const { tree: target } = trees[name];
 
   if (tree && target && tree === target) {
