@@ -60,7 +60,7 @@ apiRouter.post('/tree', (req, res) => {
         },
       },
     ];
-  // }
+  }
 
   const responseBody = {
     version: '2.0',
