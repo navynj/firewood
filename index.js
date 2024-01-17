@@ -32,30 +32,27 @@ apiRouter.post('/clue1', (req, res) => {
 });
 
 apiRouter.post('/tree', (req, res) => {
-  console.log(req.body);
-
-  const name = req.body.action.detailParams.name;
-  console.log(name);
-  console.log(typeof(name));
-
-  // const { action } = req.body;
+  const { action } = req.body;
   // const { name: nameObj, tree: treeObj } = action.detailParams;
 
   // const name = nameObj.origin;
   // const tree = treeObj.origin;
 
-  // const { tree: target, image: imageUrl } = trees[name];
+  const name = action.detailParams.name.origin;
+  const tree = action.clientExtra.tree;
 
-  // if (tree && target && tree === target && trees[name]) {
-  //   var outputs = [
-  //     {
-  //       simpleImage: {
-  //         imageUrl,
-  //         altText: '팀원을 찾을 수 있는 나무조각',
-  //       },
-  //     },
-  //   ];
-  // } else {
+  const { tree: answer, image: imageUrl } = trees[name];
+
+  if (tree && answer && tree === answer && trees[name]) {
+    var outputs = [
+      {
+        simpleImage: {
+          imageUrl,
+          altText: '팀원을 찾을 수 있는 나무조각',
+        },
+      },
+    ];
+  } else {
     var outputs = [
       {
         simpleText: {
