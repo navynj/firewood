@@ -40,7 +40,7 @@ apiRouter.post('/tree', (req, res) => {
 
   const { tree: target } = trees[name];
 
-  if (tree && target && tree === target) {
+  if (tree && target && tree === target && trees[name]) {
     var outputs = [
       {
         simpleImage: {
